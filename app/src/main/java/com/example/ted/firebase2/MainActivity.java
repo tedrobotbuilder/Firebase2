@@ -48,8 +48,8 @@ public class MainActivity extends AppCompatActivity {
         createUserButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Firebase ref = new Firebase("https://glaring-torch-2705.firebaseio.com");
-                ref.createUser("ted_sommers@hotmail.com", "3edc4rfv", new Firebase.ValueResultHandler<Map<String, Object>>() {
+                Firebase ref = new Firebase("https://<your URL here>.firebaseio.com");
+                ref.createUser("name@hotmail.com", "3edc4rfv", new Firebase.ValueResultHandler<Map<String, Object>>() {
                     @Override
                     public void onSuccess(Map<String, Object> result) {
                         textViewToChange.append("\n-Successfully created user account with uid: " + result.get("uid"));
@@ -68,8 +68,8 @@ public class MainActivity extends AppCompatActivity {
         resetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Firebase ref = new Firebase("https://glaring-torch-2705.firebaseio.com");
-                ref.resetPassword("ted_sommers@hotmail.com", new Firebase.ResultHandler() {
+                Firebase ref = new Firebase("https://<your URL here.firebaseio.com");
+                ref.resetPassword("name@hotmail.com", new Firebase.ResultHandler() {
                     @Override
                     public void onSuccess() {
                         textViewToChange.append("\n-mail sent");
